@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Room 2</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent px-3">
+    <div class="container-fluid">
+      <a class="btn btn-outline-secondary" href="../index.html">Home</a>
+      <div class="d-flex align-items-center">
+        <div class="me-3">Room 2</div>
+        <div class="me-2"><span id="progressBadge" class="badge bg-light text-dark">0/3</span></div>
+        <div style="width:140px">
+          <div class="progress" style="height:18px; background:rgba(0,0,0,0.06);">
+            <div id="progressBar" class="progress-bar bg-primary" role="progressbar" style="width:0%">0/3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-4">
+    <div class="game-card card p-3" id="mainCard">
+      <h2>Room 2: The Workshop</h2>
+      <p class="small">Collect items and craft something to open the next door.</p>
+
+      <p id="guardMsg" class="small error mt-2" style="display:none;"></p>
+
+      <div class="row row-cols-1 row-cols-md-2 g-3 mt-3">
+        <div class="col">
+          <div class="card p-3">
+            <h3>Toolbox</h3>
+            <p>You see a toolbox on a table.</p>
+            <button class="btn btn-primary" id="searchToolboxBtn">Search Toolbox</button>
+            <p id="toolboxResult" class="small mt-2"></p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card p-3">
+            <h3>Locker</h3>
+            <p>A locked locker, but the handle is loose.</p>
+            <button class="btn btn-primary" id="searchLockerBtn">Open Locker</button>
+            <p id="lockerResult" class="small mt-2"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 g-3 mt-3">
+        <div class="col">
+          <div class="card p-3">
+            <h3>Workbench (Craft)</h3>
+            <p class="small">Combine items to craft a keycard.</p>
+            <button class="btn btn-primary" id="craftBtn">Craft</button>
+            <p id="craftMsg" class="small mt-2"></p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card p-3">
+            <h3>Door</h3>
+            <p>The door needs a <b>Keycard</b>.</p>
+            <button class="btn btn-primary" id="useKeycardBtn">Use Keycard</button>
+            <p id="doorMsg" class="small mt-2"></p>
+            <a class="btn btn-success mt-2" id="nextBtn" href="room3.html" style="display:none;">Go to Room 3 →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card p-3 mt-3">
+        <h3>Inventory</h3>
+        <div class="inventory" id="inventory"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Craft Result -->
+  <div class="modal fade" id="craftModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Workbench</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="craftModalBody">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toastContainer" class="position-fixed bottom-0 end-0 p-3" style="z-index:1080"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/game.js"></script>
+  <script src="../js/room2.js"></script>
+</body>
+</html>

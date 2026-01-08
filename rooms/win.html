@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>You Escaped!</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <main class="container d-flex flex-column justify-content-center align-items-center min-vh-100 text-center">
+    <h1 class="success display-4">🎉 You Escaped!</h1>
+
+    <p class="small mt-2 mb-3">
+      Congratulations! You solved all the puzzles and escaped the building.
+    </p>
+
+    <div class="card p-3 mb-3">
+      <h3>Your Results</h3>
+      <p>Rooms completed: <b>3 / 3</b></p>
+      <p>Status: <b>SUCCESS</b></p>
+    </div>
+
+    <div class="d-flex gap-2 mt-3 flex-wrap justify-content-center">
+      <a class="btn btn-primary" href="../index.html">Play Again</a>
+      <button class="btn btn-outline-secondary" id="resetBtn">Reset Progress</button>
+    </div>
+
+    <script>
+      document.getElementById("resetBtn").addEventListener("click", () => {
+        localStorage.removeItem("escape_progress");
+        alert("Progress reset!");
+        window.location.href = "../index.html";
+      });
+    </script>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
